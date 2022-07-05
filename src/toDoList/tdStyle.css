@@ -1,0 +1,106 @@
+body{
+	font-family: Candara;
+	padding: 20px 40px;
+}
+
+.taskInput{
+	font-family: Candara;
+	font-size: 1.1em;
+	border-style: none;
+	border-bottom-style:solid;
+	width:90%;
+	padding: 5px 0 5px 5px;
+}
+
+input[type=text]:hover{
+	color: #55aaff;
+}
+
+input[type=image]{
+	position: relative;
+	left: -20px;
+	width: 20px;
+	height: 20px;
+	display: none;
+}
+
+#container, #container2, #buttonHolder{
+	margin: 20px 0;
+}
+
+#buttonHolder{
+	height: 40px; 
+	position: relative;
+}
+
+#addButton{
+	position: absolute;
+	right: 80px;
+	bottom: 10px;
+	border-style:solid;
+	border-width: 2px;
+	border-radius: 6px;
+	font-size: 1.1em;
+	background-color: white;
+}
+
+h1,h2{
+	text-align: center;
+}
+
+#textin{
+	width:780px;
+}
+
+.deleteButton{
+	background-color: red;  
+	color:white;  
+	padding:5px;
+	display: none;
+	font-size:1.1em;
+}
+
+@media screen and (max-width:850px){
+	.deleteButton{
+		display: block;
+		position:relative;
+		left:60px;
+	}
+
+	.taskDiv{
+		display: flex;
+		width:660px;
+		overflow-x: scroll;
+	}
+
+	.taskInput{
+		width: 100%;
+	}
+
+	::-webkit-scrollbar {
+		width: 0px;
+	}
+}
+
+@media screen and (max-width:650px){
+	body{
+		font-size:1.2em;
+		padding: 10px 20px;
+	}
+
+	#addButton{
+		right: 0px;
+	}
+
+	#buttonHolder{
+		width:450px;
+	}
+
+	.taskDiv{
+		width:550px;
+	}
+
+	.deleteButton{
+		left:80px;
+	}
+}
