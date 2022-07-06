@@ -9,6 +9,8 @@ div{
 	display: grid;
 	grid-template-columns: auto auto;
 	border-style:none;
+	grid-column-gap:10px;
+	grid-row-gap:10px;
 }
 
 div p{
@@ -34,6 +36,14 @@ a{
 
 a:hover{
 	color:royalblue;
+}
+
+@media screen and (max-width:450px){
+	.gridContainer{
+		display:flex;
+		flex-direction:column;
+		grid-row-gap:5px;
+	}
 }
 
 @media screen and (max-width:400px){
