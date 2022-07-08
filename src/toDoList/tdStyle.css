@@ -1,6 +1,13 @@
 body{
 	font-family: Candara;
 	padding: 20px 40px;
+	background-image: url("paperBack2.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.taskInput, #addButton{
+	background-color: rgba(0,0,0,0);
 }
 
 .taskInput{
@@ -41,15 +48,10 @@ input[type=image]{
 	border-width: 2px;
 	border-radius: 6px;
 	font-size: 1.1em;
-	background-color: white;
 }
 
 h1,h2{
 	text-align: center;
-}
-
-#textin{
-	width:780px;
 }
 
 .deleteButton{
@@ -59,6 +61,13 @@ h1,h2{
 	display: none;
 	font-size:1.1em;
 }
+
+/*@media screen and (max-width:950px){
+	body{
+		background-size: auto; 
+	}
+}
+*/
 
 @media screen and (max-width:850px){
 	.deleteButton{

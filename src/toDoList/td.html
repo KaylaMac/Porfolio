@@ -9,20 +9,19 @@
 </head>
 
 <body>
-	
 	<h1>To Do</h1>
 
 	<div id="container">
 		<div class="taskDiv" onmouseover="showTrash(this)" onmouseleave="hideTrash(this)" >
 			<input type="checkbox" onclick="crossOff(this)">
-			<input type="text" placeholder="task" id="first" class="taskInput">
+			<input type="text" placeholder="task" id="first" class="taskInput" oninput="saveTasks('container','tasks')">
 			<input type="image" src="trashIcon.png" alt="trash icon" onclick="deleteTask(this)"> 
 			<div class="deleteButton" onclick="deleteTask(this)">Delete</div>
 		 </div>
 	</div>
 
 	<div id= "buttonHolder">
-		<button id="addButton" onclick = "newTask()">+</button>
+		<button id="addButton" onclick = "newTask('container')">+</button>
 	</div>
 
 	
