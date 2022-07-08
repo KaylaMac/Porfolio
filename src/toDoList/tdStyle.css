@@ -1,7 +1,11 @@
+html{
+	height:100%;
+}
+
 body{
 	font-family: Candara;
 	padding: 20px 40px;
-	background-image: url("paperBack2.jpg");
+	background-image: url("paperBack.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -61,13 +65,6 @@ h1,h2{
 	display: none;
 	font-size:1.1em;
 }
-
-/*@media screen and (max-width:950px){
-	body{
-		background-size: auto; 
-	}
-}
-*/
 
 @media screen and (max-width:850px){
 	.deleteButton{
