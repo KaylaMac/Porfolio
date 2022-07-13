@@ -137,11 +137,15 @@ window.onload = function(){
 	var change2 = change1.replace("]","");
 	var change3 = change2.replace(/"/g,"");
 
-	var comp1 = storedCompTasks.replace("[","");
-	var comp2 = comp1.replace("]","");
-	var comp3 = comp2.replace(/"/g,"");
+	var comp3 = " ";
+	
+	if(storedCompTasks != null){
+		var comp1 = storedCompTasks.replace("[","");
+		var comp2 = comp1.replace("]","");
+		comp3 = comp2.replace(/"/g,"");
+	}
 
-	var arr = change3.split(",");
+	
 	var arr2 = comp3.split(",");
 
 	for (var n=0; n<number2-1; n++){
@@ -150,13 +154,13 @@ window.onload = function(){
 		tasks2[n].previousElementSibling.checked = true;
 	}
 
+	var arr = change3.split(",");
+
 	for (var j=0; j<number; j++){
 		if((arr[j] == "") || (arr[j] == null)){
 			tasks1[j].value = "";
 		}else{
 			tasks1[j].value = arr[j];
 		}		
-	}
-
-	
+	}	
 }
