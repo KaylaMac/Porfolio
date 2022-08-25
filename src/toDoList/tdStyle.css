@@ -3,7 +3,7 @@ html{
 }
 
 body{
-	font-family: Candara;
+	font-family: Candara, sans-serif;
 	padding: 20px 40px;
 	background-image: url("paperBack.jpg");
 	background-size: cover;
