@@ -1,0 +1,37 @@
+nav{
+	text-align: right;
+	padding: 2px 10px 15px 10px;
+}
+
+nav a{
+	margin: 0 5px;
+}
+
+#menuButton{
+	display:none;
+}
+
+/* menu transitions */
+.change .bar1{
+	transform:translate(0,8px) rotate(-45deg);
+}
+
+.change .bar2{
+	opacity:0;
+}
+
+.change .bar3{
+	transform:translate(0, -8px) rotate(45deg);
+}
+/* menu transitions */
+
+@media screen and (max-width:770px){
+	#menuButton{
+		display:inline-block;
+		cursor:pointer;
+	}
+
+	nav a{
+		display:block;
+	}
+}

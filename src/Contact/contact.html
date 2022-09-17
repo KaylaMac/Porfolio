@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset = 'utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="author" content="Kayla McIntosh">
+	<title>Contact Me</title>
+	<link rel="icon" type="image/x-icon" href="../../images/faviconKM.ico">
+	<link rel="stylesheet" type="text/css" href="../../commonFiles/navStyle.css">
+	<link rel="stylesheet" type="text/css" href="../../indexStyle.css">
+	<link rel="stylesheet" type="text/css" href="contactStyle.css">
+</head>
+
+<body>
+	<nav>
+		<a href="../../index.html"><img src="../../images/KMBlack.svg" width="35px" alt="logo" style="float:left;"/></a>
+		<div id="menuButton" onclick="menuAnim(this); linksDisplay()">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>
+
+		<div id="links">
+			<a href="../Resume/resume.html">Resume</a>
+			<a href="../About/about.html">About</a>
+			<a href="../../index.html#port">Portfolio</a>
+			<a style="color:#848484;">Contact</a>
+		</div>
+	</nav>
+
+	<div id="wrapper">
+		<img src="textBubble.svg" id="blueBubble">
+
+		<div id="bubblesGrid">
+			<svg width="470" id="bubbleOne">
+				<path d="M 20 10 H 450 Q 470 10 470 30 V 280 L 440 200 H 20 Q 0 200 0 180 V 30 Q 0 10 20 10" fill="rgba(218,58,100,0.5)"/>
+			</svg>
+
+			<div id="messageHolder">
+				<h1>Let's talk!</h1>
+				<button onclick="window.location.href='mailto:mcintoshkayla72@gmail.com'">Email me</button>
+			</div>
+
+			<svg width="310px" height="220px" id="bubbleTwo">
+				<path d="M 20 30 H 290 Q 310 30 310 50 V 150 Q 310 170 290 170 H 20 L 0 210 V 50 Q 0 30 20 30" fill="rgba(218,58,100,0.5)">
+			</svg>
+		</div>
+	</div>
+
+	<script src="../../commonFiles/navFunctions.js"></script>
+</body>
+</html>

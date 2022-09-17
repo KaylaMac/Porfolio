@@ -4,7 +4,6 @@ html{
 
 body{
 	font-family: Candara, sans-serif;
-	padding: 20px 40px;
 	background-image: url("paperBack.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -15,7 +14,7 @@ body{
 }
 
 .taskInput{
-	font-family: Candara;
+	font-family: Candara, sans-serif;
 	font-size: 1.1em;
 	border-style: none;
 	border-bottom-style:solid;
@@ -36,7 +35,7 @@ input[type=image]{
 }
 
 #container, #container2, #buttonHolder{
-	margin: 20px 0;
+	margin: 20px 40px;
 }
 
 #buttonHolder{
@@ -84,6 +83,7 @@ h1,h2{
 
 	::-webkit-scrollbar {
 		width: 0px;
+		display:none;
 	}
 
 	input[type=checkbox]{

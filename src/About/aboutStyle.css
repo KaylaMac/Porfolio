@@ -1,0 +1,74 @@
+html, body{
+	height:100%;
+}
+
+body{
+	background-color:black;
+	font-family: "Segoe UI", Helvetica, sans-serif;
+	color: white;
+	/*border-style:solid;*/
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+a:hover{
+	color:#fb9058;
+}
+
+#links{
+	display:inline-block;
+}
+
+.bar1, .bar2, .bar3{
+	width:30px;
+	height:4px;
+	background-color:white;
+	margin:4px 0;
+	transition:0.4s;
+	border-radius:2px;
+}
+
+#textHolder{
+	position:absolute;
+	top:50px;
+	width:52%;
+}
+
+@media screen and (max-width:770px){
+	#links{
+		display:none;
+		position:absolute;
+		overflow:hidden;
+		height:0;
+		right:0;
+		transition:height 0.5s;
+		z-index:1;
+		width:100%;
+		text-align:center;
+		background-color:rgba(0,0,0,0.5);
+		backdrop-filter:blur(5px);
+		padding:0 0 10px 0;
+	}
+}
+
+@media screen and (max-width:430px){
+	#textHolder{
+		width:95%;
+	}
+}
+
+@media screen and (max-width:355px){
+	#ballHolder{
+		position:relative;
+		top:20px;
+	}
+}
+
+@media screen and (max-width:325px){
+	#ballHolder{
+		top:55px;
+	}
+}

@@ -1,16 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset = 'utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="author" content="Kayla McIntosh">
+	<meta name="description" content="Hi, I'm Kayla McIntosh and I am an aspiring web designer. Come check out my portfolio, which I designed and coded myself!">
 	<title>Kayla's Portfolio</title>
 	<link rel="icon" type="image/x-icon" href="images/faviconKM.ico">
+	<link rel="stylesheet" type="text/css" href="indexStyle.css">
+	<link rel="stylesheet" type="text/css" href="commonFiles/navStyle.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
 </head>
 
 <body>
-	<p>page in progress</p>
-	<ul>
-		<li><a href="src/toDoList/td.html">To-do list</a></li>
-		<li><a href="src/Resume/resume.html">Resume</a></li>
-	</ul>
+	<nav>
+		<img src="images/KMBlack.svg" width="35px" style="float:left;" alt="logo"/>
+		<div id="menuButton" onclick="menuAnim(this); linksDisplay()">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>
+
+		<div id="links">
+			<a href="src/Resume/resume.html">Resume</a>
+			<a href="src/About/about.html">About</a>
+			<a href="#port">Portfolio</a>
+			<a href="src/Contact/contact.html">Contact</a>
+		</div>
+	</nav>
+
+	<div id="gridTitle">
+		<div style="text-align:center; padding:20px 0 0 0;">
+			<h1 id="headingOne">Hi! I'm Kayla</h1>
+			<h2 id="headingTwo">Web Designer</h2>
+			<button class="actionButton" onclick="window.location.href='src/About/about.html'">About Me</button>
+			<button class="actionButton" onclick="window.location.href='src/Contact/contact.html'">Contact Me</button>
+		</div>
+
+		<div style="position:relative;">
+		<img id="myPic" src="images/me.png" width="150px" alt="Kayla McIntosh"/>
+
+		<svg width="400" height="400"  id="circles">
+			<circle fill="#d03D63" r="160" cx="160" cy="200"/>
+			<circle fill="#546392" r="200" cx="350" cy="200"/>
+		</svg>
+		</div>
+	</div>
+
+	<!-- Swiper -->
+	<div class="swiper mySwiper">
+		<h3 id="port">Projects</h3>
+
+		<!--buttons-->
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+
+		<div class="swiper-wrapper">
+			<div class="swiper-slide" onclick="moveTwo(this)">
+				<div class="descrHolder"><p class="swiperDescriptions">Here is my resume</p></div>
+				<img src="images/resumeScreen2.jpg" alt="Resume"/>
+				<div class="buttonHolder">
+					<button onclick="movePic(this)" class="infoButton">Info</button>
+          				<button onclick="window.location.href='src/Resume/resume.html'" class="viewButton">View</button>
+          			</div>
+			</div>
+        
+			<div class="swiper-slide" onclick="moveTwo(this)">
+				<div class="descrHolder"><p class="swiperDescriptions">This "to do" list uses localStorage to save the user's input even after they have left the page. You may add as many tasks as needed and when they have been checked off, the tasks are moved to the "completed" section.</p></div>
+				<img src="images/toDoScreen2.jpg" alt="to do list"/>
+				<div class="buttonHolder">
+					<button onclick="movePic(this)" class="infoButton">Info</button>
+          				<button onclick="window.location.href='src/toDoList/td.html'" class="viewButton">View</button>
+          			</div>
+			</div>
+
+			<div class="swiper-slide" onclick="moveTwo(this)">
+				<div class="descrHolder"><p class="swiperDescriptions">placeholder</p></div>
+				<img src="https://swiperjs.com/demos/images/nature-3.jpg" alt="nature picture"/>
+
+				<div class="buttonHolder">
+					<button onclick="movePic(this)" class="infoButton">Info</button>
+          				<button class="viewButton">View</button>
+          			</div>
+			</div>
+
+			<div class="swiper-slide">
+				<div class="descrHolder"><p class="swiperDescriptions">placeholder (great game)</p></div>
+				<img src="https://2.bp.blogspot.com/-5n7-m5nk2xk/WHsl5IAYwmI/AAAAAAAAALs/evbbixHViRgWFjnI1tvLqh5A6iJR3AqSQCLcB/s1600/Uncharted-4-A-Thiefs-End-Game-Wallpaper.jpg" alt="Uncharted game"/>
+				<div class="buttonHolder">
+					<button onclick="movePic(this)" class="infoButton">Info</button>
+          				<button class="viewButton">View</button>
+          			</div>
+			</div>
+
+			<div class="swiper-slide">
+				<div class="descrHolder"><p class="swiperDescriptions">placeholder (extremely great game)</p></div>
+				<img src="https://www.pcgamesn.com/wp-content/uploads/2019/10/the-last-of-us.jpg" alt="The Last of Us"/>
+				<div class="buttonHolder">
+					<button onclick="movePic(this)" class="infoButton">Info</button>
+          				<button class="viewButton">View</button>
+          			</div>
+			</div>
+		</div>
+
+		<div class="swiper-pagination"></div>
+	</div>
+
+	<!-- Swiper JS -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+	<script src="portScript.js"></script>
+
+	<script src="commonFiles/navFunctions.js"></script>
+
 <body>
 </html>

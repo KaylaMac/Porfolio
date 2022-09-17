@@ -65,6 +65,7 @@ function newTask(c){
 	var trashButton= document.createElement("INPUT");
 	trashButton.setAttribute("type","image");
 	trashButton.setAttribute("src","trashIcon.png");
+	trashButton.setAttribute("alt","trash icon");
 	trashButton.setAttribute("onclick","deleteTask(this)");
 
 	var delButton= document.createElement("div");

@@ -38,6 +38,24 @@ a:hover{
 	color:royalblue;
 }
 
+#buttonsContainer{
+	border-style:none;
+	text-align:center;
+}
+
+.buttonz{
+	width:80px;
+	margin:10px;
+	font-family:Times;
+	font-size:1em;
+}
+
+@media print{
+	#buttonsContainer{
+		display:none;
+	}
+}
+
 @media screen and (max-width:450px){
 	.gridContainer{
 		display:flex;

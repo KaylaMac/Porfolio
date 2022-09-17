@@ -1,0 +1,275 @@
+html,body{
+	height:100%;
+}
+
+body{
+	font-family: "Segoe UI", Helvetica, sans-serif;
+	background-color:#f8fffd;
+	margin:10px 0;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+a:hover{
+	color:#546392;
+}
+
+#links{
+	display:inline-block;
+}
+
+.bar1, .bar2, .bar3{
+	width:30px;
+	height:4px;
+	background-color:black;
+	margin:4px 0;
+	transition:0.4s;
+	border-radius:2px;
+}
+
+#gridTitle{
+	display:grid;
+	grid-template-columns: auto auto;
+	margin:0 0 60px 0;
+}
+
+#headingOne{
+	font-size:65px;
+	margin: 15px 5px 5px;
+}
+
+#headingTwo{
+	margin:8px;
+	font-size:1.8em;
+}
+
+.actionButton{
+	margin:10px;
+	width:100px;
+	background-color:#546392;
+	color:white;
+	border-style:none;
+	border-radius:4px;
+	height:28px;
+	cursor:pointer;
+}
+
+#port{
+	text-align:center;
+	font-size:1.4em;
+}
+
+.swiperDescriptions{
+	position:absolute; 
+	bottom:20px;
+}
+
+#myPic{
+	position:absolute; 
+	top:30%; 
+	right:20%;
+}
+
+#circles{
+	z-index:-1; 
+	float:right;
+}
+
+/**************** css for swiper ****************/
+.swiper-button-prev, .swiper-button-next{
+	--swiper-navigation-color:#546392; 
+}
+
+.buttonHolder{
+	position:absolute;
+	top:0px;
+	right:10px;
+}
+
+.infoButton, .viewButton{
+	width:100px;
+	background-color:#546392;
+	color:white;
+	border-style:none;
+	border-radius:4px;
+	display:block;
+	margin:10px 0;
+	font-size:1.2em;
+	visibility:hidden;
+	cursor:pointer;
+}
+
+.descrHolder{
+	padding:30px;
+	height:300px;
+	position:relative;
+	transform: translate3d(0,-10px,-60px) scale(1.5,1.5);
+	visibility:hidden;
+}
+
+.imageReposition{
+	transform: translate3d(0,-20%,-45px);
+}
+
+.disappear{
+	opacity:0;
+	transform: translate3d(0,-30%,-50px);
+}
+
+.swiper-slide-active > .buttonHolder > button, .swiper-slide-active > .descrHolder{
+	visibility:visible;
+}
+
+.swiper {
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.swiper-slide {
+	width: 300px;
+	height: 300px;
+	perspective:100px;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	box-shadow:0px 5px 15px 8px grey;
+	position:absolute;
+	top:0;
+	border-radius:10px;
+	height:300px;
+	transition: transform 0.5s, opacity 0.5s;
+}
+
+@media screen and (min-width:2200px){
+	.swiper-slide img {
+		height:450px;
+	}
+
+	.swiper{
+		height:600px;
+	}
+
+	.descrHolder{
+		height:420px;
+	}
+}
+
+@media screen and (max-width:1050px){
+	#myPic{
+		right:30%;
+	}
+}
+
+@media screen and (max-width:818px){
+	#headingOne{
+		font-size:3em;
+	}
+
+	#headingTwo{
+		font-size:1.6em;
+	}
+
+	.swiper-slide img{
+		height:220px;
+	}
+
+	.swiper{
+		height:350px;
+	}
+
+	.descrHolder{
+		height:190px;
+	}
+}
+
+@media screen and (max-width:770px){
+	.infoButton{
+		display:none;
+	}
+
+	#links{
+		display:none;
+		position:absolute;
+		overflow:hidden;
+		height:0;
+		right:0;
+		transition:height 0.5s;
+		z-index:1;
+		width:100%;
+		text-align:center;
+		background-color:rgba(248,255,253,0.5);
+		backdrop-filter:blur(5px);
+		padding:0 0 10px 0;
+	}
+}
+
+@media screen and (max-width:555px){
+	#circles{
+		width:100%;
+	}
+}
+
+@media screen and (max-width:485px){
+	#headingOne{
+		line-height:1;
+	}
+}
+
+@media screen and (max-width:480px){
+	#gridTitle{
+		grid-template-columns: 0.45fr 0.55fr;
+	}
+
+	#myPic{
+		right:0;
+	}
+}
+
+@media screen and (max-width:430px){
+	#headingOne{
+		font-size:2.8em;
+	}
+
+	#headingTwo{
+		font-size:1.4em;
+	}
+
+	.swiper-slide img{
+		box-shadow:0px 5px 10px 2px grey;
+	}
+}
+
+@media screen and (max-width:380px){
+	#headingOne{
+		margin: 15px 0 20px;
+	}
+
+	#gridTitle{
+		grid-template-columns: 0.65fr 0.35fr;
+	}
+
+	#links{
+		background-color:#F8FFFD;
+	}
+}
+
+
+@media screen and (max-width:330px){
+	#headingOne{
+		font-size:2em;
+	}
+
+	#headingTwo{
+		font-size:1.4em;
+	}
+
+	.descrHolder{
+		transform: translate3d(0,-10px,-60px) scale(1.4,1.3);
+	}
+}
