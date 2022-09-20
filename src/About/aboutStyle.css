@@ -62,13 +62,12 @@ a:hover{
 
 	#ballHolder{
 		position:relative;
-		top:25%;
+		top:80px;
 	}
 }
 
 @media screen and (max-width:350px){
 	#ballHolder{
-		position:relative;
 		top:20px;
 	}
 }
