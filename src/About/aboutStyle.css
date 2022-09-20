@@ -49,8 +49,8 @@ a:hover{
 		width:100%;
 		text-align:center;
 		background-color:rgba(0,0,0,0.5);
-		backdrop-filter:blur(5px);
 		-webkit-backdrop-filter:blur(5px);
+		backdrop-filter:blur(5px);
 		padding:0 0 10px 0;
 	}
 }
@@ -59,9 +59,14 @@ a:hover{
 	#textHolder{
 		width:95%;
 	}
+
+	#ballHolder{
+		position:relative;
+		top:20%;
+	}
 }
 
-@media screen and (max-width:355px){
+@media screen and (max-width:380px){
 	#ballHolder{
 		position:relative;
 		top:20px;
