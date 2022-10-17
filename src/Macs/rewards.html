@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Kayla McIntosh">
+	<title>Sign Up</title>
+	<link rel="stylesheet" type="text/css" href="rewardsStyle.css">
+	<link rel="icon" type="image/x-icon" href="./images/fav.ico">
+</head>
+
+<body>
+	<nav>
+		<a href="macs.html"><img src="./images/MACLogo.svg" width= "80px" alt="logo"></a> 
+	</nav>
+
+	<h1 style="text-align:center;">Sign up for rewards!</h1>
+
+	<div id="signUpGrid">
+		<label>First name <br><input type="text" required></label>
+		<label>Last name <br><input type="text" required></label>
+		<label style="grid-column-start:1; grid-row-start:2;">Email <br><input type="email" required></label>
+		<div style="grid-column-start:2; grid-row-start:2;">
+			<label>Password <br><input id="passwordIn" type="password" minlength="8" required></label>
+			<div id="criteria">
+				<p id="errorMessage"></p>
+				<p>Password should contain:</p>
+				<ul>
+					<li>At least 8 characters</li>
+					<li>At least 1 number</li>
+					<li>One uppercase letter</li>
+					<li>One of the following: @ # $ % & ? ! *</li>
+				</ul>
+			</div>
+		</div>
+		<button type="button" id="signUp" onclick="validate()">Sign up</button>
+	</div>
+
+	<h2 style="text-align:center;">It's quite simple</h2>
+	<div id="offerGrid">
+		<p>The more you order, the more points you earn</p>
+		<img src="./images/phone.png" id="phonePic" alt="phone with order page displayed">
+		<p style="grid-column-start:2;">Redeem your points for free meals!</p>
+		<img src="./images/menuItems/lasagnaTwoDrawShadow.png" width="100%" id="las" alt="lasagna">
+	</div>
+
+	<div id="confirmHolder">
+		<div id="confirmation">
+			<h1>Welcome to Macs Rewards!</h1>
+			<h2>You've successfully signed up... sort of</h2>
+			<p>Remember, this service isn't real, so unfortunately, there are no rewards to reap</p>
+			<button id="homeButton" type="button" onclick="window.location.href='macs.html'">Home</button>
+			<button type="button" title="close button" onclick="closeConfirm()" style="background-color:rgba(0,0,0,0); border-style:none; position:absolute; top:20px; right:20px; cursor:pointer;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                </svg>
+            </button>
+		</div>
+	</div>
+
+	<script src="rewardsScript.js"></script>
+</body>
+</html>

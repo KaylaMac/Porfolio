@@ -1,0 +1,404 @@
+body{
+	font-family: Optima, Candara;
+	background-color: #fefff2;
+    margin-left:0;
+}
+
+nav{
+    padding: 2px 15px 10px;
+	text-align: right;
+}
+
+/****** food buttons *******/
+
+.foodButton{
+    font-family: Optima, Candara; 
+    font-size:1em; 
+    position:relative; 
+    scroll-snap-align:start; 
+    margin:15px; 
+    padding:0px; 
+    background-color: rgba(0,0,0,0); 
+    border-style:none; 
+    border-radius:10px; 
+    box-shadow: 0px 5px 8px 2px grey; 
+    cursor:pointer;
+}
+
+.foodButton:disabled{
+    color:black;
+    cursor:default;
+}
+
+.foodButton:hover .cartButton{ visibility: visible;}
+
+/*************************/
+
+.menuImages{
+    width:250px;
+    height:200px;
+    border-top-left-radius:10px; 
+	border-top-right-radius:10px;
+}
+
+.selection{
+    display:flex; 
+    width:100%; 
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    margin:0 10px;
+}
+
+.selection::-webkit-scrollbar{
+    width: 0px;
+	display:none;
+}
+
+.selectionHolder{
+    position:relative;
+    margin-left:15px;
+}
+
+.leftButton, .rightButton{
+    border-radius:50%;
+    border-style:none;
+    padding-top:5px;
+    background-color:#468d40;
+    color:white;
+    position: absolute;
+    top:40%;
+}
+
+.leftButton{
+    left:0;
+    z-index: 1;
+    box-shadow:inset 2px 1px 8px black;
+    filter:drop-shadow(4px 2px 5px black);
+}
+
+.rightButton{
+    right:0;
+    box-shadow:inset -2px 1px 8px black;
+    filter:drop-shadow(-4px 2px 5px black);
+    margin-right: 15px;
+}
+
+.leftButton:disabled, .rightButton:disabled{ color:rgba(255,255,255,0.4);}
+
+.cartButton{
+    position: absolute;
+    bottom:5px;
+    right:5px;
+    visibility:hidden;
+    background-color: #468d40; 
+    width:25px;
+    padding:10px;
+    border-bottom-right-radius: 5px;
+}
+
+#showOrderButton{
+    padding:0;
+    border-style:none;
+    background-color:rgba(0,0,0,0);
+    position:relative;
+    cursor:pointer;
+}
+
+#orderContainer{
+    text-align:right;
+    padding:10px 20px; 
+    position: -webkit-sticky;
+    position: sticky; 
+    top:0; 
+    z-index:1;
+}
+
+#order{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    row-gap:15px;
+    width:30%;
+    position:absolute;
+    right:0px;
+    padding:0 20px;
+    background-color: rgba(254,255,242,0.8);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter:blur(8px);
+	border-top-left-radius:20px;
+	border-bottom-left-radius:20px;
+    height:0px;
+    overflow-y: hidden;
+    max-height: 75vh;
+}
+
+#endOfOrder{
+    grid-column:1/span 3;
+	text-align:center;
+}
+
+#checkoutButton{
+    margin-bottom:20px; 
+    background-color: #468d40; 
+    border-width:0.5px;
+}
+
+#checkoutButton:hover, .continue:hover{ background-color: #66ad60;}
+
+#foodItemsNum{
+    background-color: red; 
+    position: absolute; 
+    right:0px; 
+    top:0; 
+    color:white; 
+    padding:2px 7px; 
+    border-radius: 50%;
+    visibility: hidden;
+}
+
+@keyframes enter{
+	0%{bottom:-50px;}
+	75%{bottom:20px}
+	100%{bottom:10px;}
+}
+
+.numAnim{
+    animation-name:enter;
+	animation-duration:0.55s;
+	animation-timing-function:ease-out;
+}
+
+@keyframes enterSoda{
+	0%{bottom:-50px;}
+	75%{bottom:80px}
+	100%{bottom:70px;}
+}
+
+.sodaAnim{
+    animation-name:enterSoda;
+	animation-duration:0.8s;
+	animation-timing-function:ease-out;
+}
+
+#num{
+    background-color: rgba(171,32,0,0.8);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter:blur(8px);
+    border-radius: 10px;
+    position:fixed;
+    bottom:10px;
+    left:45%;
+    font-size:2.5em;
+    padding:0 0 0 20px;
+    visibility: hidden;
+    z-index:1;
+}
+
+#sizes{
+    position:fixed;
+    bottom:70px;
+    left:45%;
+    font-size:2.5em;
+    background-color:#468d40;
+	border-radius: 10px;
+	padding:0 10px;
+    visibility: hidden;
+    z-index:1;
+}
+
+#sizes input[type="radio"] { display: none;}
+
+label:has(input[type="radio"]#small), label:has(input[type="radio"]#large){ padding: 0 5px;}
+
+#sizes label{margin:0 5px;}
+
+#sizes label:has(input[type="radio"]:checked){ background-color:#266d20;}
+   
+#sizes label:hover{ color:white;}
+
+.quanButton{
+    border-style:none;
+    background-color: rgba(0,0,0,0);
+}
+
+.quanButton:hover{color:white;}
+
+#quantity{display:inline;}
+
+#orderPromptHolder{
+    position:fixed; 
+    top:0; 
+    width:100vw; 
+    height:100vh; 
+    background-color: rgba(0,0,0,0.7);
+    z-index:1;
+    display:none;
+}
+
+.checkoutDivs{
+    background-color:#fefff2; 
+    width:40%;
+    height:60%; 
+    margin:auto; 
+    position: relative; 
+    top:15%; 
+    padding:50px; 
+    text-align: left;
+    overflow-y:auto;
+}
+
+#orderTypePrompt{text-align: center;}
+
+.orderTypeHead{margin-bottom: 10px;}
+
+.totalDisplay{
+	margin:0 0 30px;
+	font-size:1.7em;
+}
+
+#pickupDiv, #deliveryDiv{ display:none;}
+
+.infoGrid{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+}
+
+.labels{
+    font-variant:small-caps;
+    margin-bottom:20px;
+}
+
+.textInputs{
+    background-color: #fefff2;
+    box-shadow: inset 0 0 10px rgba(100,100,100,0.6);
+    border-style:none;
+    border-radius:3px;
+    padding: 5px;
+    margin-top:8px;
+}
+
+.textInputs::placeholder{color:rgba(0,0,0,0.75);}
+
+#state{text-transform:uppercase;}
+
+.wrong{
+	box-shadow: inset 0 0 10px rgba(255,50,60,0.9);
+}
+
+#pickupDiv input:valid, #deliveryDiv input:valid{
+	box-shadow: inset 0 0 10px rgba(100,100,100,0.6);
+}
+
+.orderButtons{
+    font-family: Optima, Candara;
+    font-weight:bold;
+    font-size: 1em;
+    margin:15px 10px;
+    display: inline-block;
+	cursor: pointer;
+    padding: 5px;
+    width:90px;
+	border-radius:4px;
+}
+
+.continue{ background-color: #468d40;}
+
+.cancel{ background-color:#ab2000;}
+
+.cancel:hover{ background-color:#bf4222;}
+
+@media screen and (max-width: 1025px){
+	#order{
+		width:40%;
+	}
+}
+
+@media screen and (max-width: 770px){
+	.cartButton{
+		display:none;
+	}
+
+    .leftButton, .rightButton{
+		display:none;
+	}
+
+    #order{
+		width:50%;
+	}
+
+    body{
+		margin-right:0px;
+	}
+
+    .checkoutDivs{
+		width:55%;
+	}
+}
+
+@media screen and (max-width: 450px){
+	#order{
+		width:85%;
+        max-height: 80vh;
+	}
+
+    .menuImages{
+	    width:190px;
+	    height:150px;
+	}
+
+	.foodButton p{
+		margin:10px auto;
+	}
+
+    #num{
+		left:35%;
+	}
+
+	#sizes{
+		left:35%;
+	}
+
+    .checkoutDivs{
+		width:100%;
+		height:95vh;
+		top:0;
+		padding:30px 10px;
+	}
+}
+
+@media screen and (max-width: 380px){
+	#orderContainer{
+	    padding:10px 0px; 
+	}
+
+    .menuImages{
+	    width:170px;
+	    height:140px;
+	}
+
+	.foodButton{
+		font-size:0.9em;
+	}
+}
+
+@media screen and (max-width: 345px){
+	#order{
+		column-gap:25px;
+	}
+
+    #num{
+		left:30%;
+	}
+
+	#sizes{
+		left:30%;
+	}
+
+    .checkoutDivs{
+		padding:30px 5px;
+	}
+
+	.textInputs{
+		width:120px;
+	}
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Kayla McIntosh">
+	<title>Order Confirmed</title>
+	<link rel="stylesheet" type="text/css" href="confirmStyle.css">
+	<link rel="icon" type="image/x-icon" href="./images/fav.ico">
+</head>
+
+<body>
+	<nav>
+		<a href="macs.html"><img src="./images/MACLogo.svg" width= "80px" style="float:left;" alt="logo"></a> 
+		<a href="rewards.html" style="text-decoration:none; color:black; display:inline-block; margin:20px;">Sign up</a>
+	</nav>
+
+	<main>
+		<h1>Thank you for your order!</h1>
+		<h2>Please don't expect food though; this is just a concept website</h2>
+
+		<div id="orderInfo">
+			<h3 style="text-align:center; color:black; font-size:1.3em;">Order Information</h3>
+			<p class="infoLabel">Name:</p> <p id="name"></p><br>
+			<p class="infoLabel">Total:</p> <p id="totalDisplay"></p><br>
+			<p class="infoLabel">Order Number:</p> <p id="orderNum"></p><br>
+			<p class="infoLabel">Order Date:</p> <p id="orderDate"></p><br>
+		</div>
+
+		<button id="homeButton" type="button" onclick="window.location.href='macs.html'">Home</button>
+	</main>
+
+	<script src="confirmScript.js"></script>
+</body>
+</html>

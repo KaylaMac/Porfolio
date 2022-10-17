@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = 'utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Kayla McIntosh">
+    <title>Order</title>
+    <link rel="icon" type="image/x-icon" href="./images/fav.ico">
+    <link rel="stylesheet" type="text/css" href="orderStyle.css">
+</head>
+
+<body>
+    <nav>
+		<a href="macs.html"><img src="./images/MACLogo.svg" width= "80px" style="float:left;" alt="logo"></a> 
+		<a href="rewards.html" style="text-decoration:none; color:black; display:inline-block; margin:20px 12px 20px 20px;">Sign up</a>
+	</nav>
+
+    <div id="orderContainer">
+        <button onclick="showOrder()" id="showOrderButton" title="display order" type="button">
+            <img src="./images/cart.svg" width="40px" style="margin: 16px 9px 0 0;" alt="Cart button">
+            <p id="foodItemsNum"></p>
+        </button>
+
+        <div id="order">
+            <div id="endOfOrder">
+                <p id="total">Your cart is empty</p>
+                <button id="checkoutButton" type="button" onclick="checkOut()" title="checkout button">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!--displays when adding food or drink (choose quantity)-->
+    <div id="num">
+        <button class="quanButton" onclick="subtractQuantity()" title="subtractButton" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"/>
+            </svg>
+        </button>
+
+        <p id="quantity">1</p>
+
+        <button class="quanButton" onclick="addQuantity()" title="addButton" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+            </svg>
+        </button>
+
+        <div style="display:inline-block; background-color:#468d40; padding:0 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
+            <input type="image" src="./images/cart.svg" id="addFoodButton" width="25px" alt="add to cart with quantity"/>
+        </div>
+    </div>
+
+    <!--only displays when adding a drink (choose size)-->
+    <div id="sizes">
+        <label>S<input type="radio" id="small" name="drinkSize"></label>
+        <label>M<input type="radio" id="medium" name="drinkSize" checked="true"></label>
+        <label>L<input type="radio" id="large" name="drinkSize"></label>
+    </div>
+
+    <!--sections for food and drink selection-->
+    <div class="selectionHolder">
+        <button class="leftButton" onclick="goLeft(this)" disabled title="left button" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg>
+        </button>
+
+        <div class="selection">
+            <button disabled class="foodButton" type="button" onclick="showQuantity(0)">
+                <img src="./images/menuItems/cfr.jpg" class="menuImages" alt="Chicken fried rice">
+                <p>Chicken Fried Rice</p>
+                <p>Price: $12.25</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantity(0)" class="cartButton" alt="add to cart"/>
+            </button>
+            
+            <button disabled class="foodButton" type="button" onclick="showQuantity(1)">
+                <img src="./images/menuItems/scampi.jpg" class="menuImages" alt="Shrimp scampi">
+                <p>Shrimp Scampi</p>
+                <p>Price: $22.15</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantity(1)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantity(2)">
+                <img src="./images/menuItems/mushroomSauce.jpg" class="menuImages" alt="Steak and mushroom sauce">
+                <p>Steak and Mushroom Sauce</p>
+                <p>Price: $17.38</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantity(2)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantity(3)">
+                <img src="./images/menuItems/chickenParmesan.jpg" class="menuImages" alt="Chicken parmigiana">
+                <p>Chicken Parmigiana</p>
+                <p>Price: $13.10</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantity(3)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantity(4)">
+                <img src="./images/menuItems/guac.jpg" class="menuImages" alt="Guacomole">
+                <p>Guacomole</p>
+                <p>Price: $10.20</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantity(4)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantity(5)">
+                <img src="./images/menuItems/meatloaf.jpg" class="menuImages" alt="Meatloaf">
+                <p>Meatloaf</p>
+                <p>Price: $15.75</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantity(5)" class="cartButton" alt="add to cart"/>
+            </button>
+        </div>
+
+        <button class="rightButton" onclick="goRight(this)" title="right button" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </button>
+    </div>
+
+    <div class="selectionHolder">
+        <button class="leftButton" onclick="goLeft(this)" disabled title="left button" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg>
+        </button>
+
+        <div class="selection">
+            <button disabled class="foodButton" type="button" onclick="showQuantity(6)">
+                <img src="./images/menuItems/salmon.jpg" class="menuImages" alt="Salmon">
+                <p>Salmon</p>
+                <p>Price: $12.10</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantity(6)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantity(7)">
+                <img src="./images/menuItems/spagh.jpg" class="menuImages" alt="Spaghetti and meatballs">
+                <p>Spaghetti and Meatballs</p>
+                <p>Price: $11.00</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantity(7)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantity(8)">
+                <img src="./images/menuItems/macAndCheese.jpg" class="menuImages" alt="Mac and cheese">
+                <p>Mac and Cheese</p>
+                <p>Price: $10.30</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantity(8)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantity(9)">
+                <img src="./images/menuItems/lasagna.jpg" class="menuImages" alt="Lasagna">
+                <p>Lasagna</p>
+                <p>Price: $23.19</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantity(9)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantity(10)">
+                <img src="./images/menuItems/chili.jpg" class="menuImages" alt="Chili">
+                <p>Chili</p>
+                <p>Price: $16.55</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantity(10)" class="cartButton" alt="add to cart"/>
+            </button>
+        </div>
+
+        <button class="rightButton" onclick="goRight(this)" title="right button" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </button>
+    </div>
+
+    <h2 style="text-align: center; margin-top: 40px; margin-bottom: 0px;">Drinks</h2>
+    <h3 style="text-align: center; margin: 2px;">All drinks range from $2-3</h3>
+
+    <div class="selectionHolder">
+        <button class="leftButton" onclick="goLeft(this)" disabled title="left button" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg>
+        </button>
+
+        <div class="selection">
+            <button disabled class="foodButton" type="button" onclick="showQuantityDrink(0)">
+                <img src="./images/menuItems/CC.jpg" class="menuImages" alt="Coca-Cola">
+                <p>Coca-Cola</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantityDrink(0)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantityDrink(1)">
+                <img src="./images/menuItems/Barqs.jpg" class="menuImages" alt="Barq's">
+                <p>Barq's</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantityDrink(1)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantityDrink(2)">
+                <img src="./images/menuItems/brisk.jpg" class="menuImages" alt="Brisk">
+                <p>Brisk</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantityDrink(2)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantityDrink(3)">
+                <img src="./images/menuItems/Dew.jpg" class="menuImages" alt="Mountain Dew">
+                <p>Mountain Dew</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantityDrink(3)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantityDrink(4)">
+                <img src="./images/menuItems/sprite.jpg" class="menuImages" alt="Sprite">
+                <p>Sprite</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantityDrink(4)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantityDrink(5)">
+                <img src="./images/menuItems/pepsi.jpg" class="menuImages" alt="Pepsi">
+                <p>Pepsi</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantityDrink(5)" class="cartButton" alt="add to cart"/>
+            </button>
+        </div>
+
+        <button class="rightButton" onclick="goRight(this)" title="right button" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </button>
+    </div>
+
+    <div class="selectionHolder">
+        <button class="leftButton" onclick="goLeft(this)" disabled title="left button" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg>
+        </button>
+        
+        <div class="selection">
+            <button disabled class="foodButton" type="button" onclick="showQuantityDrink(6)">
+                <img src="./images/menuItems/JuC.jpg" class="menuImages" alt="Ju C">
+                <p>Ju C</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantityDrink(6)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantityDrink(7)">
+                <img src="./images/menuItems/DP.jpg" class="menuImages" alt="Dr. Pepper">
+                <p>Dr. Pepper</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantityDrink(7)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantityDrink(8)">
+                <img src="./images/menuItems/MinuteMaid.jpg" class="menuImages" alt="Minute Maid Lemonade">
+                <p>Lemonade</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantityDrink(8)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantityDrink(9)">
+                <img src="./images/menuItems/CanadaDry.jpg" class="menuImages" alt="Canada Dry">
+                <p>Ginger Ale</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantityDrink(9)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantityDrink(10)">
+                <img src="./images/menuItems/PS.jpg" class="menuImages" alt="Poland Spring">
+                <p>Water</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantityDrink(10)" class="cartButton" alt="add to cart"/>
+            </button>
+
+            <button disabled class="foodButton" type="button" onclick="showQuantityDrink(11)">
+                <img src="./images/menuItems/sunnyD.jpg" class="menuImages" alt="Sunny D">
+                <p>Sunny D</p>
+                <input type="image" src="./images/cart.svg" onclick="showQuantityDrink(11)" class="cartButton" alt="add to cart"/>
+            </button>
+        </div>
+
+        <button class="rightButton" onclick="goRight(this)" title="right button" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </button>
+    </div>
+
+    <div id="orderPromptHolder">
+        <div class="checkoutDivs" id="orderTypePrompt">
+            <h1>How do you want your order?</h1>
+            <div style="text-align:left; width:max-content; margin:10px auto;">
+                <label><input type="radio" name="orderType" id="pickupOpt" checked="true">Pickup</label><br>
+                <label><input type="radio" name="orderType" id="delivOpt">Delivery</label><br>
+            </div>
+            <button class="orderButtons continue" onclick="next()" type="button">Continue</button>
+            <button class="orderButtons cancel" onclick="cancel()" type="button">Cancel</button>
+        </div>
+
+        <div class="checkoutDivs" id="pickupDiv">
+            <h1 class="orderTypeHead">Pickup</h1>
+            <h2 class="totalDisplay"></h2>
+            <div class="infoGrid">
+                <label class="labels">First name <br><input id="pickupFirst" class="textInputs" type="text" required></label>
+                <label class="labels">Last name <br><input id="pickupLast" class="textInputs" type="text" required></label>
+            </div>
+
+            <h2 style="margin:40px 0 10px;">Credit Card Details (but not really, just put in any numbers)</h2>
+            <div class="infoGrid">
+                <label class="labels">Card number <br><input type="text" placeholder="Ex: 0000 0000 0000 0000" class="textInputs" id="cardNum" maxlength="19" minlength="19" inputmode="numeric" required></label>
+                <label class="labels">Expiration Date <br><input type="text" placeholder="MM / YY" maxlength="5" minlength="5" class="textInputs" id="date" inputmode="numeric" required></label>
+                <label class="labels">CVV <br><input type="text" placeholder="Three digits" maxlength="3" minlength="3" class="textInputs cvv" inputmode="numeric" required></label>
+            </div>
+
+            <div style="text-align:center; margin-top:60px;">
+                <button class="orderButtons continue" id="pickSubmit" type="button">Submit</button>
+                <button class="orderButtons cancel" onclick="back(this)" type="button">Go back</button>
+            </div>
+
+            <button type="button" title="cancel checkout" onclick="cancel()" style="background-color:rgba(0,0,0,0); border-style:none; position:absolute; top:20px; right:20px; cursor:pointer;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="checkoutDivs" id="deliveryDiv">
+            <h1 class="orderTypeHead">Delivery</h1>
+            <h2 class="totalDisplay"></h2>
+            <div class="infoGrid">
+                <label class="labels">First name <br><input id="delFirst" class="textInputs" type="text" required></label>
+                <label class="labels">Last name <br><input id="delLast" class="textInputs" type="text" required></label>
+            </div>
+
+            <h2>Address</h2>
+            <div class="infoGrid">
+                <label class="labels">Address <br><input class="textInputs" type="text" required></label>
+                <label class="labels">City <br><input class="textInputs" type="text" required></label>
+                <label class="labels">State <br><input class="textInputs" type="text" required maxlength="2" minlength="2" id="state" placeholder="XX"></label>
+                <label class="labels">Zip <br><input class="textInputs" type="text" required maxlength="5" minlength="5" id="zip" inputmode="numeric"></label>
+            </div>
+
+            <h2 style="margin:40px 0 10px;">Credit Card Details (but not really, just put in any numbers)</h2>
+            <div class="infoGrid">
+                <label class="labels">Card number <br><input type="text" placeholder="Ex: 0000 0000 0000 0000" class="textInputs" id="cardNum2" required maxlength="19" minlength="19" inputmode="numeric"></label>
+                <label class="labels">Expiration Date <br><input type="text" placeholder="MM / YY" maxlength="5" minlength="5" class="textInputs" id="date2" required inputmode="numeric"></label>
+                <label class="labels">CVV <br><input type="text" placeholder="Three digits" maxlength="3" minlength="3" class="textInputs cvv" inputmode="numeric" required></label>
+            </div>
+
+            <div style="text-align:center; margin-top:60px;">
+                <button class="orderButtons continue" type="button" id="delSubmit">Submit</button>
+                <button class="orderButtons cancel" onclick="back(this)" type="button">Go back</button>
+            </div>
+
+            <button type="button" title="cancel checkout" onclick="cancel()" style="background-color:rgba(0,0,0,0); border-style:none; position:absolute; top:20px; right:20px; cursor:pointer;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- script for credit card formatting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"></script>
+    <script src="orderScript.js"></script>
+</body>
+</html>

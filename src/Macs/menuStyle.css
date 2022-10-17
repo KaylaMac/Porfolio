@@ -1,0 +1,85 @@
+body{
+	font-family: Optima, Candara;
+	background-color: #fefff2;
+}
+
+nav{
+	padding: 2px 7px 10px;
+	text-align: right;
+	margin-bottom:85px;
+}
+
+#menuContainer{
+	display: grid;
+	grid-template-columns:1fr 1fr 1fr;
+	grid-template-rows:auto auto auto;
+	gap: 35px;
+	margin:30px;
+}
+
+.menuItemsLeft{
+	box-shadow: 10px 10px 15px 4px grey; 
+	border-radius:10px; 
+}
+
+.menuItemsMiddle{
+	box-shadow: 0px 10px 15px 4px grey; 
+	border-radius:10px; 
+}
+
+.menuItemsRight{
+	box-shadow: -10px 10px 15px 4px grey; 
+	border-radius:10px; 
+}
+
+.menuImages{
+	width: 100%; 
+	border-top-left-radius:10px; 
+	border-top-right-radius:10px;
+	height:25vw;
+}
+
+.menuLabels{
+	text-align:center; 
+}
+
+.actionButtons{
+	background-color: rgba(70,141,64,0.8);
+	font-size: 1.5em;
+	margin: 60px auto;
+	border-style: solid;
+	border-color:black;
+	border-width: 3px;
+	border-radius: 4px;
+	display: block;
+	cursor: pointer;
+	padding: 5px;
+}
+
+@media screen and (max-width:770px){
+	#menuContainer{
+		grid-template-columns:1fr 1fr;
+		grid-template-rows:auto auto auto auto;
+		
+	}
+
+	.menuImages{
+		height:30vw;
+	}
+
+	.menuItemsLeft, .menuItemsRight{
+		box-shadow: 0px 10px 15px 4px grey; 
+	}
+}
+
+@media screen and (max-width:380px){
+	#menuContainer{
+		display:flex;
+		margin:30px 20px;
+		flex-direction:column;
+	}
+
+	.menuImages{
+		height:55vw;
+	}
+}
