@@ -54,19 +54,20 @@ label{
 
 input{
 	background-color: #fefff2;
-	box-shadow: inset 0 0 10px rgba(100,100,100,0.6);
+	box-shadow: inset 0 0 10px 2px rgba(100,100,100,0.6);
 	border-style:none;
 	border-radius:3px;
 	padding: 5px;
 	margin-top:8px;
+	font-size:16px;
 }
 
 input:valid{
-	box-shadow: inset 0 0 10px rgba(100,100,100,0.6);
+	box-shadow: inset 0 0 10px 2px rgba(100,100,100,0.6);
 }
 
 .wrong{
-	box-shadow: inset 0 0 10px rgba(255,50,60,0.9);
+	box-shadow: inset 0 0 10px 2px rgba(255,50,60,0.9);
 }
 
 ul{
@@ -89,22 +90,24 @@ ul{
 	display: inline-block;
 }
 
-#homeButton{
+.actionButton{
 	display:block;
 	margin:25px auto;
-	padding:2px 15px;
+	padding:5px 0px;
+	width:120px;
 }
 
-#homeButton, #signUp{
+.actionButton, #signUp{
 	font-family: Optima, Candara;
 	font-weight:bold;
 	font-size: 1em;
 	cursor: pointer;
 	border-radius:4px;
 	background-color: #468d40;
+	color:black;
 }
 
-#homeButton:hover, #signUp:hover{
+.actionButton:hover, #signUp:hover{
 	background-color: #66ad60;
 }
 

@@ -54,6 +54,7 @@ nav{
 	display: block;
 	cursor: pointer;
 	padding: 5px;
+	color:black;
 }
 
 @media screen and (max-width:770px){
