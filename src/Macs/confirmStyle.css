@@ -23,6 +23,7 @@ main{
 	cursor: pointer;
 	border-radius:4px;
 	background-color: #468d40;
+	color:black;
 }
 
 #homeButton:hover{
