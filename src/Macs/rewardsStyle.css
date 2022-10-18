@@ -54,7 +54,6 @@ label{
 
 input{
 	background-color: #fefff2;
-	-webkit-box-shadow:inset 0 0 10px 2px rgba(100,100,100,0.6);
 	box-shadow: inset 0 0 10px 2px rgba(100,100,100,0.6);
 	border-style:none;
 	border-radius:3px;
@@ -165,6 +164,16 @@ ul{
 
 	input{
 		width:100%;
+		border-style:solid;
+		border-color:black;
+	}
+
+	input:valid{
+		border-color: black;
+	}
+	
+	.wrong{
+		border-color:rgba(255,50,60,0.95);
 	}
 
 	#signUp{
