@@ -172,6 +172,10 @@ nav{
 	animation-timing-function:ease-out;
 }
 
+#num.numAnim{
+    visibility: visible;
+}
+
 @keyframes enterSoda{
 	0%{bottom:-50px;}
 	75%{bottom:80px}

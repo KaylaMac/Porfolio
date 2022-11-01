@@ -42,75 +42,50 @@
 			<img id="myPic" src="images/me.png" width="150px" alt="Kayla McIntosh"/>
 
 			<svg width="400" height="400"  id="circles">
-				<circle fill="#d03D63" r="160" cx="160" cy="200"/>
+				<circle fill="#ad2552" r="160" cx="160" cy="200"/>
 				<circle fill="#546392" r="200" cx="350" cy="200"/>
 			</svg>
 		</div>
 	</div>
 
-	<!-- Swiper -->
-	<div class="swiper mySwiper">
-		<h3 id="port">Projects</h3>
-
-		<!--buttons-->
-		<div class="swiper-button-prev"></div>
-		<div class="swiper-button-next"></div>
-
-		<div class="swiper-wrapper">
-			<div class="swiper-slide" onclick="moveTwo(this)">
-				<div class="descrHolder"><p class="swiperDescriptions">Here is my resume</p></div>
-				<img src="images/resumeScreen2.jpg" alt="Resume"/>
-				<div class="buttonHolder">
-					<button onclick="movePic(this)" class="infoButton" type="button">Info</button>
-          				<button onclick="window.location.href='src/Resume/resume.html'" type="button" class="viewButton">View</button>
-          			</div>
+	<h3 id="port">Projects</h3>
+	<section style="background-color:#B9C2DF;">
+		<div id="mockupsGrid">
+			<img src="images/resumeMockup.jpg" width="100%" class="upper left" alt="resume mockup" id="resume"/>
+			<div class="upper right">
+				<p>Here is my resume</p>
+				<button onclick="window.location.href='src/Resume/resume.html'" type="button">Visit page
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+					</svg>
+				</button>
 			</div>
-        
-			<div class="swiper-slide" onclick="moveTwo(this)">
-				<div class="descrHolder"><p class="swiperDescriptions">This "to do" list uses localStorage to save the user's input even after they have left the page. You may add as many tasks as needed and when they have been checked off, the tasks are moved to the "completed" section.</p></div>
-				<img src="images/toDoScreen2.jpg" alt="to do list"/>
-				<div class="buttonHolder">
-					<button onclick="movePic(this)" class="infoButton" type="button">Info</button>
-          				<button onclick="window.location.href='src/toDoList/td.html'" type="button" class="viewButton">View</button>
-          			</div>
+			<img src="images/tdMockup.jpg" width="100%" style="grid-column-start:2;" alt="to do list mockup" class="right">
+			<div style="grid-column-start:1; grid-row-start:2;" class="left">
+				<p>This "to do" list uses localStorage to save the user's input even after they have left the page. 
+				You may add as many tasks as needed and when they have been checked off, the tasks are moved to the "completed" section.</p>
+				<p>You may add a task by either pressing on the button labeled with a plus sign, or pressing enter on the keyboard while the focus is on 
+					an input box.
+				</p>
+				<button onclick="window.location.href='src/toDoList/td.html'" type="button">Visit page
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+					</svg>
+				</button>
 			</div>
-
-			<div class="swiper-slide" onclick="moveTwo(this)">
-				<div class="descrHolder"><p class="swiperDescriptions">Macs is a fictional restaurant that I created to demonstrate how I might design for a client. With the exception of the food images and the UI button SVGs, I designed everything in this concept site. Users may browse and purchase dishes.</p></div>
-				<img src="images/macsScreen.jpg" alt="macs - fictional restaurant"/>
-
-				<div class="buttonHolder">
-					<button onclick="movePic(this)" class="infoButton" type="button">Info</button>
-          				<button onclick="window.open('src/Macs/macs.html')" type="button" class="viewButton">View</button>
-          			</div>
-			</div>
-
-			<div class="swiper-slide">
-				<div class="descrHolder"><p class="swiperDescriptions">placeholder (great game)</p></div>
-				<img src="https://2.bp.blogspot.com/-5n7-m5nk2xk/WHsl5IAYwmI/AAAAAAAAALs/evbbixHViRgWFjnI1tvLqh5A6iJR3AqSQCLcB/s1600/Uncharted-4-A-Thiefs-End-Game-Wallpaper.jpg" alt="Uncharted game"/>
-				<div class="buttonHolder">
-					<button onclick="movePic(this)" class="infoButton" type="button">Info</button>
-          				<button class="viewButton" type="button">View</button>
-          			</div>
-			</div>
-
-			<div class="swiper-slide">
-				<div class="descrHolder"><p class="swiperDescriptions">placeholder (extremely great game)</p></div>
-				<img src="https://www.pcgamesn.com/wp-content/uploads/2019/10/the-last-of-us.jpg" alt="The Last of Us"/>
-				<div class="buttonHolder">
-					<button onclick="movePic(this)" class="infoButton" type="button">Info</button>
-          				<button class="viewButton" type="button">View</button>
-          			</div>
+			<img src="images/macsMockup.jpg" width="100%" class="lower left" alt="macs - fictional restaurant mockup" id="macs">
+			<div class="lower right">
+			<p>Macs is a fictional restaurant that I created to demonstrate how I might design for a client. With the exception of the food images and the UI button SVGs, 
+				I designed everything in this concept site. Users may browse browse food items and go through an online order process. 
+				The site accepts input towards the end of the "transaction", but nothing is done with the information that is entered.</p>
+				<button onclick="window.open('src/Macs/macs.html')" type="button">Visit page
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+					</svg>
+				</button>
 			</div>
 		</div>
-
-		<div class="swiper-pagination"></div>
-	</div>
-
-	<!-- Swiper JS -->
-	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-	<script src="portScript.js"></script>
+	</section>
 
 	<script src="commonFiles/navFunctions.js"></script>
 

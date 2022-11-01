@@ -55,8 +55,10 @@ function subtractQuantity(){
 //display UI element to allow user to choose quantity. parameter is to control which food item is added
 var arrayNum=0;
 function showQuantity(y){
-    quantityDiv.style.visibility = "visible";
-    quantityDiv.classList.add("numAnim");
+    quantityDiv.classList.remove("numAnim");
+
+    setTimeout(()=> {quantityDiv.classList.add("numAnim");}, 100);
+    
     addFoodButton.setAttribute("onclick","addFoodItem()");
     arrayNum = y;
 
@@ -67,7 +69,7 @@ function showQuantity(y){
 }
 
 function showQuantityDrink(y){
-    quantityDiv.style.visibility = "visible";
+    //quantityDiv.style.visibility = "visible";
     quantityDiv.classList.add("numAnim");
 
     sizeDiv.style.visibility = "visible";
@@ -179,7 +181,7 @@ function appendQualities(picture, label, pricePara) {
 }
 
 function resetQuantity() {
-    quantityDiv.style.visibility = "hidden";
+    //quantityDiv.style.visibility = "hidden";
     quantityDiv.classList.remove("numAnim");
 
     quantity = 1;
