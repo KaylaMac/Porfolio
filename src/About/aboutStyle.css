@@ -43,7 +43,7 @@ h2,h3{color:#aaaaaa;}
 #textHolder{
 	position:absolute;
 	top:50px;
-	background-image:linear-gradient(to bottom,rgba(0,0,0,0.45) 90%,rgba(0,0,0,0));
+	background-image:linear-gradient(to bottom, rgba(0,0,0,0) 1%, rgba(0,0,0,0.45) 25% 80%, rgba(0,0,0,0));
 }
 
 #textHolder p{
