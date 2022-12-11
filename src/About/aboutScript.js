@@ -65,7 +65,7 @@ function main() {
         ball.rotation.x += 0.0001;
         
         ball2.rotation.y += -0.004;
-        ball.rotation.x += -0.0002;
+        ball2.rotation.x += -0.0002;
         
         ball3.rotation.x += 0.00015;
         
