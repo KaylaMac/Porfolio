@@ -57,6 +57,7 @@ h2,h3{color:#aaaaaa;}
 		overflow:hidden;
 		height:0;
 		right:0;
+		top:50px;
 		transition:height 0.5s;
 		z-index:1;
 		width:100%;
