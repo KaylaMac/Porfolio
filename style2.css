@@ -223,6 +223,8 @@ button:hover, #workButton:hover{background-color: #9a144e;}
 	#projectsFlex{scroll-snap-type: x mandatory;}
 
 	.projectHolder{scroll-snap-align:center;}
+
+	.description p{margin-bottom:0;}
 }
 
 @media screen and (max-width:380px){
