@@ -215,8 +215,24 @@ button:hover, #workButton:hover{background-color: #9a144e;}
 	nav img{margin-left:20px;}
 }
 
+@media screen and (max-width:430px){
+	.projectHolder img{width:95vw;}
+
+	.actionButton{font-size:1em;}
+
+	#projectsFlex{scroll-snap-type: x mandatory;}
+
+	.projectHolder{scroll-snap-align:center;}
+}
+
+@media screen and (max-width:380px){
+	.description p{font-size:.86em;}
+}
+
 @media screen and (max-width:325px){
 	h1{font-size:3em;}
 
 	h2{font-size:2.5em;}
+
+	.description p{font-size:.66em;}
 }
