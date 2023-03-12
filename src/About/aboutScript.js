@@ -22,7 +22,9 @@ function main() {
     const geometry3 = new THREE.SphereGeometry( 3, 50, 40 );
     
     const texture = new THREE.TextureLoader().load( "basketball.jpg" );
-    const material = new THREE.MeshStandardMaterial({color: 0xa24620, map:texture, roughnessMap: texture});
+    const bump = new THREE.TextureLoader().load( "basketballNormal.jpg" );
+    const scale = new THREE.Vector2(0.4,0.4);
+    const material = new THREE.MeshStandardMaterial({color: 0xa24620, map:texture, normalMap:bump, normalScale:scale, roughness:0.45});
   
     const ball = new THREE.Mesh(geometry, material);
     const ball2 = new THREE.Mesh(geometry, material);

@@ -1,6 +1,4 @@
-html, body{
-	height:100%;
-}
+html, body{height:100%;}
 
 body{
 	background-color:black;
@@ -8,18 +6,14 @@ body{
 	color: white;
 }
 
-canvas{
-	width:100%;
-}
+canvas{width:100%;}
 
 a{
 	text-decoration: none;
 	color: white;
 }
 
-a:hover{
-	color:#fb9058;
-}
+a:hover{color:#fb9058;}
 
 h2{font-weight:600;}
 
@@ -27,9 +21,7 @@ h3{font-weight:400;}
 
 h2,h3{color:#aaaaaa;}
 
-#links{
-	display:inline-block;
-}
+#links{display:inline-block;}
 
 .bar1, .bar2, .bar3{
 	width:30px;
@@ -46,9 +38,7 @@ h2,h3{color:#aaaaaa;}
 	background-image:linear-gradient(to bottom, rgba(0,0,0,0) 1%, rgba(0,0,0,0.45) 25% 80%, rgba(0,0,0,0));
 }
 
-#textHolder p{
-	font-size: 1.1rem;
-}
+#textHolder p{font-size: 1.1rem;}
 
 @media screen and (max-width:770px){
 	#links{
@@ -68,38 +58,33 @@ h2,h3{color:#aaaaaa;}
 		padding:0 0 10px 0;
 	}
 
+	body{
+		margin-left:0;
+		margin-right:0;
+	}
+
+	nav img{margin-left:5px;}
+
 	canvas{
 		height:100%;
 		position:relative;
 		top:10px;
 	}
 
-	#textHolder p{
-		font-size: 1em;
-	}
-}
+	#textHolder{padding:10px;}
 
-@media screen and (max-width:395px){
-	#textHolder{
-		padding-right:10px;
-	}
+	#textHolder p{font-size: 1em;}
 }
 
 @media screen and (max-width:376px){
-	canvas{
-		top:100px;
-	}
+	canvas{top:100px;}
 
-	h1{
-		margin-bottom:0;
-	}
+	h1{margin-bottom:0;}
 
 	h2{
 		margin-top:0;
 		font-size:1.3em;
 	}
 
-	h3{
-		font-size:1.15em;
-	}
+	h3{font-size:1.15em;}
 }
