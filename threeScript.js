@@ -89,7 +89,7 @@ controls2.autoRotate = true;
 controls2.autoRotateSpeed = 0.75;
 
 
-/***************** Scene 3 ******************
+/***************** Scene 3 ******************/
 const macsCanvas = document.getElementById("macsCanvas");
 const macsRenderer= new THREE.WebGLRenderer({antialias: true,canvas:macsCanvas});
 
@@ -126,7 +126,7 @@ gLoader.load("./images/gltfs/macsLaptop.gltf",function(gltf){
 
 const controls3 = new OrbitControls(camera3,macsRenderer.domElement);
 controls3.autoRotate = true;
-controls3.autoRotateSpeed = -1.25;*/
+controls3.autoRotateSpeed = -1.25;
 
 
 function resizeRendererToDisplaySize(renderer) {
@@ -148,8 +148,8 @@ function animate() {
     camera2.aspect = canvas.clientWidth / canvas.clientHeight;
     camera2.updateProjectionMatrix();
 
-    // camera3.aspect = canvas.clientWidth / canvas.clientHeight;
-    // camera3.updateProjectionMatrix();
+    camera3.aspect = canvas.clientWidth / canvas.clientHeight;
+    camera3.updateProjectionMatrix();
         
     if (resizeRendererToDisplaySize(renderer)) {
         const canvas = renderer.domElement;
@@ -162,17 +162,17 @@ function animate() {
         camera2.updateProjectionMatrix();
     }
 
-    // if (resizeRendererToDisplaySize(macsRenderer)) {
-    //     camera3.aspect = canvas.clientWidth / canvas.clientHeight;
-    //     camera3.updateProjectionMatrix();
-    // }
+    if (resizeRendererToDisplaySize(macsRenderer)) {
+        camera3.aspect = canvas.clientWidth / canvas.clientHeight;
+        camera3.updateProjectionMatrix();
+    }
 
 	renderer.render( resScene, camera );
     tdRenderer.render(tdScene,camera2);
-    //macsRenderer.render(macsScene,camera3);
+    macsRenderer.render(macsScene,camera3);
     controls.update();
     controls2.update();
-    //controls3.update();
+    controls3.update();
 	requestAnimationFrame( animate );
 }
 requestAnimationFrame( animate );
@@ -186,12 +186,9 @@ const canvasClickListener = (event) => {
     setTimeout(()=> {description.classList.add("top")},600);
 }
 
-controls.enabled = false;
-controls2.enabled = false;
-//controls3.enabled = false;
 controls.domElement.style.touchAction = 'auto';
 controls2.domElement.style.touchAction = 'auto';
-//controls3.domElement.style.touchAction = 'auto';
+controls3.domElement.style.touchAction = 'auto';
 
 window.onload= sizing;
 window.onresize = sizing;
@@ -199,20 +196,16 @@ window.onresize = sizing;
 function sizing(){
     var canvases = document.getElementsByClassName("canvasHolder");
     if(window.matchMedia("(min-width:770px)").matches){
-        console.log(window.matchMedia("(min-width:900px)"))
         controls.enabled = true;
         controls2.enabled = true;
-        //controls3.enabled = true;
-        document.body.style.backgroundImage = "linear-gradient(to right,#141414,#ff0000)";
+        controls3.enabled = true;
         for(var i=0; i< canvases.length; i++){
             canvases[i].removeEventListener("click",canvasClickListener);
         }
     }else{
-        console.log(window.matchMedia("(min-width:900px)")+ " small")
         controls.enabled = false;
         controls2.enabled = false;
-        //controls3.enabled = false;
-        document.body.style.backgroundImage = "linear-gradient(to right,#141414,#00ff00)";
+        controls3.enabled = false;
         for(var i=0; i< canvases.length; i++){
             canvases[i].addEventListener("click",canvasClickListener);
         }
