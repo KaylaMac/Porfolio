@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset = 'utf-8'>
+	<meta charset = 'utf-8'/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<meta name="author" content="Kayla McIntosh">
-	<meta name="description" content="Hi, I'm Kayla McIntosh and I am an aspiring web designer. Come check out my portfolio, which I designed and coded myself!">
+	<meta name="author" content="Kayla McIntosh"/>
+	<meta name="description" content="Hi, I'm Kayla McIntosh and I am an aspiring web designer. Come check out my portfolio, which I designed and coded myself!"/>
+
+	<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+	<script type="importmap">
+	{
+		"imports": {
+		"three": "https://unpkg.com/three@0.151.3/build/three.module.js",
+		"three/addons/": "https://unpkg.com/three@0.151.3/examples/jsm/"
+		}
+	}
+	</script>
+
 	<title>Kayla's Portfolio</title>
 	<link rel="icon" type="image/x-icon" href="images/faviconKM.ico">
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -45,7 +56,10 @@
 		<h3 id="port">Projects</h3>
 		<div id="projectsFlex">
 			<div class="projectHolder">
-				<img src="images/resumeMockup.jpg" width="100%" alt="resume mockup" onclick="playAnimation(this)"/>
+				<div class="canvasHolder">
+					<canvas id="resumeCanvas"></canvas>
+					<button onclick="playAnimation(this)" type="button">Info</button>
+				</div>
 				<div class="description" onclick="removeAnimation(this)">
 					<p>Here is my resume</p>
 					<button onclick="window.location.href='src/Resume/resume.html'" type="button" class="visitButton">Visit page
@@ -55,9 +69,12 @@
 					</button>
 				</div>
 			</div>
-
+		
 			<div class="projectHolder">
-				<img src="images/tdMockup.jpg" width="100%" alt="to do list mockup" onclick="playAnimation(this)">
+				<div class="canvasHolder">
+					<canvas id="tdCanvas"></canvas>
+					<button onclick="playAnimation(this)" type="button">Info</button>
+				</div>
 				<div class="description" onclick="removeAnimation(this)">
 					<p>This "to do" list uses localStorage to save the user's input even after they have left the page. 
 					You may add as many tasks as needed and when they have been checked off, the tasks are moved to the "completed" section.</p>
@@ -71,9 +88,12 @@
 					</button>
 				</div>
 			</div>
-
+	
 			<div class="projectHolder">
-				<img src="images/macsMockup.jpg" width="100%" alt="macs - fictional restaurant mockup" onclick="playAnimation(this)">
+				<div class="canvasHolder">
+					<canvas id="macsCanvas"></canvas>
+					<button onclick="playAnimation(this)" type="button">Info</button>
+				</div>
 				<div class="description" onclick="removeAnimation(this)">
 					<p>Macs is a fictional restaurant that I created to demonstrate how I might design for a client. With the exception of the food images and the UI button SVGs, 
 						I designed everything in this concept site. Users may browse food items and go through an online order process. 
@@ -88,8 +108,8 @@
 		</div>
 	</section>
 
-	<script src="commonFiles/navFunctions.js"></script>
+	<script type="module" src="threeScript.js"></script>
 	<script src="portScript.js"></script>
-
+	<script src="commonFiles/navFunctions.js"></script>
 <body>
 </html>

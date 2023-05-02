@@ -1,8 +1,9 @@
 function playAnimation(x){
-	var page= x.nextElementSibling;
-	page.classList.remove("anim2");
-	page.classList.add("anim");
-	setTimeout(()=> {page.classList.add("top")},600);
+	var parent = x.parentElement;
+	var description = parent.nextElementSibling;
+	description.classList.remove("anim2");
+	description.classList.add("anim");
+	setTimeout(()=> {description.classList.add("top")},600);
 }
 
 function removeAnimation(y){
