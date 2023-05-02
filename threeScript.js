@@ -186,6 +186,10 @@ const canvasClickListener = (event) => {
     setTimeout(()=> {description.classList.add("top")},600);
 }
 
+controls.touches = {};
+controls2.touches = {};
+controls3.touches = {};
+
 controls.domElement.style.touchAction = 'auto';
 controls2.domElement.style.touchAction = 'auto';
 controls3.domElement.style.touchAction = 'auto';

@@ -36,6 +36,7 @@ body, a, button{color:#EBE7F4;}
     width:100%;
     overflow-x: scroll;
     padding:20px 0;
+	scroll-behavior: smooth;
 }
 
 #projectsFlex::-webkit-scrollbar{
@@ -96,6 +97,28 @@ canvas:active{
 	color:#EBE7F4;
 }
 
+.directionButtons{
+	position:absolute;
+	top:50%;
+	z-index:2;
+	background-color: rgba(0,0,0,0);
+	color:black;
+	padding:0;
+}
+
+.directionButtons:hover{
+	color: rgba(110,146,189,0.75);
+	background-color: rgba(0,0,0,0);
+}
+
+#rightButton{
+	right:0;
+}
+
+#leftButton{
+	left:0;
+}
+
 .description button{
 	display:block;
 	margin:auto 10px 10px auto;
@@ -146,7 +169,8 @@ button:hover, #workButton:hover{background-color: #9a144e;}
 #aboutButton:hover{background-color: rgba(154,20,78,0.6);}
 
 #workButton{
-    background-color: #414147;
+    background-color:#EBE7F4;
+	color:#212124;
     font-weight: bold;
 }
 
@@ -155,6 +179,7 @@ button:hover, #workButton:hover{background-color: #9a144e;}
     box-shadow: 0 0 20px rgba(0,0,0,0.75);
     margin-left:-20px;
     padding:5px 15px 20px;
+	position: relative;
 }
 
 #port{text-align:center;}
@@ -207,9 +232,9 @@ button:hover, #workButton:hover{background-color: #9a144e;}
 		padding:0 0 10px 0;
 	}
 
-	.canvasHolder button{
-		display:none;
-	}
+	.directionButtons{display:none;}
+
+	.canvasHolder button{display:none;}
 
     #greetingDiv{
 		position:absolute;
@@ -226,11 +251,6 @@ button:hover, #workButton:hover{background-color: #9a144e;}
 		background-color:#212124;
 		border-style:none;
 		padding:8px;
-	}
-
-	#workButton{
-		background-color:#EBE7F4;
-		color:#212124;
 	}
 
     html,body{overflow-x:hidden;}
@@ -254,7 +274,10 @@ button:hover, #workButton:hover{background-color: #9a144e;}
 
 	.projectHolder{scroll-snap-align:center;}
 
-	.description p{margin-bottom:0;}
+	.description p{
+		margin-bottom:0;
+		font-size:.95em;
+	}
 }
 
 @media screen and (max-width:380px){
