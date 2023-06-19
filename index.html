@@ -62,6 +62,22 @@
 		<div id="projectsFlex">
 			<div class="projectHolder">
 				<div class="canvasHolder">
+					<canvas id="galleryCanvas"></canvas>
+					<button onclick="playAnimation(this)" type="button">Info</button>
+				</div>
+				<div class="description" onclick="removeAnimation(this)">
+					<p>This gallery is a small selection of my artworks from as early as 2014. You may use your mouse and keyboard to travel around my gallery, which I developed in Blender.</p>
+					<p><b>Note:</b> This page will be much easier to navigate on desktop. The videos may not be displayed on mobile. If you are viewing this page on a mobile device, you may orbit the scene using one finger and pan around the gallery using two fingers.</p>
+					<button onclick="window.open('src/Gallery/gallery.html')" type="button" class="visitButton">Visit page
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16">
+							<path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<div class="projectHolder">
+				<div class="canvasHolder">
 					<canvas id="resumeCanvas"></canvas>
 					<button onclick="playAnimation(this)" type="button">Info</button>
 				</div>
@@ -74,7 +90,7 @@
 					</button>
 				</div>
 			</div>
-		
+
 			<div class="projectHolder">
 				<div class="canvasHolder">
 					<canvas id="tdCanvas"></canvas>

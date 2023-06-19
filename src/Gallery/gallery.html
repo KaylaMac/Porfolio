@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="author" content="Kayla McIntosh"/>
+	<title>Kayla's Gallery</title>
+	<link rel="stylesheet" type="text/css" href="galleryStyle.css"/>
+	<link rel="icon" type="image/x-icon" href="../../images/faviconKM.ico">
+
+	<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+	<script type="importmap">
+	{
+		"imports": {
+		"three": "https://unpkg.com/three@0.152.2/build/three.module.js",
+		"three/addons/": "https://unpkg.com/three@0.152.2/examples/jsm/"
+		}
+	}
+	</script>
+</head>
+
+<body>
+	<svg id="preloader">
+		<circle id="one" r="60" cx="50%" cy="50%" stroke="black" fill="white" stroke-dasharray="130" stroke-width="2"/>
+		<circle id="two" r="40" cx="50%" cy="50%" stroke="black" fill="white" stroke-dasharray="220" stroke-width="3"/>
+	</svg>
+	
+	<canvas id="sceneHolder" width="100%"></canvas>
+	<video id="pancakeVid" autoplay loop>
+		<source src="./videos/Project_1_Vid.mp4" type="video/mp4"/>
+	</video>
+
+	<video id="houseVid" autoplay loop>
+		<source src="./videos/Project_2_Vid.mp4" type="video/mp4"/>
+	</video>
+
+	<video id="appleVid" autoplay loop>
+		<source src="./videos/AppleMascotVid.mp4" type="video/mp4"/>
+	</video>
+
+	<video id="mountainVid" autoplay loop>
+		<source src="./videos/mountain.mp4" type="video/mp4"/>
+	</video>
+
+	<div id="instructionsHolder">
+		<div id="colorBlock"></div>
+		<div id="instructions">
+			<h1>Kayla's Gallery</h1>
+			<h2>Click here to explore gallery</h2>
+			<p><b>Look around</b>: Mouse</p>
+			<p><b>Move</b>: WASD / Arrow keys</p>
+			<p>Press esc to make the cursor visible again</p>
+		</div>
+	</div>
+
+	<script type="module" src="galleryScript.js"></script>
+</body>
+</html>

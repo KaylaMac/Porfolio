@@ -3,14 +3,23 @@ html, body{height:100%;}
 body{
 	background-color:black;
 	font-family: "Segoe UI", Helvetica, sans-serif;
-	color: white;
+	color: #EBE7F4;
 }
 
-canvas{width:100%;}
+@keyframes fadeIn{
+	0%{opacity: 0;}
+	100%{opacity:1;}
+}
+
+canvas{
+	width:100%;
+	animation-name: fadeIn;
+	animation-duration: 1s;
+}
 
 a{
 	text-decoration: none;
-	color: white;
+	color: #EBE7F4;
 }
 
 a:hover{color:#fb9058;}
@@ -26,7 +35,7 @@ h2,h3{color:#aaaaaa;}
 .bar1, .bar2, .bar3{
 	width:30px;
 	height:4px;
-	background-color:white;
+	background-color:#EBE7F4;
 	margin:4px 0;
 	transition:0.4s;
 	border-radius:2px;
